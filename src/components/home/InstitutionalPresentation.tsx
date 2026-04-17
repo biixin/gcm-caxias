@@ -46,7 +46,7 @@ export default function InstitutionalPresentation() {
               pública da Baixada Fluminense.
             </p>
             <p className="text-slate-500 leading-relaxed">
-              Ao integrar PM, Polícia Civil e Guarda Municipal em um único ambiente de
+              Ao integrar PM, Polícia Civil, Guarda Municipal e demais órgãos em um único ambiente de
               capacitação, a plataforma rompe silos institucionais e cria uma linguagem comum
               para a produção de inteligência operacional e estratégica, baseada em dados reais
               do território.
