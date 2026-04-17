@@ -17,17 +17,16 @@ export default function Footer() {
           <div className="text-center md:text-right">
             <div className="flex items-center gap-1.5 justify-center md:justify-end text-xs text-slate-500 mb-1">
               <Lock size={11} />
-              <span>Documento de Uso Restrito — Circulação Interna</span>
+              <span>Documento de Estudo — Uso Educacional</span>
             </div>
             <p className="text-xs text-slate-600">
-              Relatório de Análise de Dados · Exercício 2024
+              Relatório de Análise de Dados · Exercício 2026
             </p>
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-slate-600">
           <p>
-            Os dados apresentados neste relatório são de caráter analítico e devem ser tratados
-            com sigilo institucional.
+            Os dados apresentados neste relatório possuem caráter analítico e são baseados em fontes públicas, com finalidade exclusivamente educacional e institucional
           </p>
           <p className="flex-shrink-0">Duque de Caxias — RJ · 2024</p>
         </div>

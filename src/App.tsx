@@ -1,23 +1,25 @@
-import Header from './components/Header';
-import Introduction from './components/Introduction';
-import DataImportance from './components/DataImportance';
-import Dashboard from './components/Dashboard';
-import InterpretiveAnalysis from './components/InterpretiveAnalysis';
-import Recommendations from './components/Recommendations';
-import Footer from './components/Footer';
+import { useState } from 'react';
+import Navbar from './components/Navbar';
+import HomePage from './components/home/HomePage';
+import AnalyticsPage from './components/analytics/AnalyticsPage';
+import ExplorePage from './components/explore/ExplorePage';
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState<string>('home');
+
+  const handleNavigate = (page: string) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-white font-sans antialiased">
-      <Header />
-      <main>
-        <Introduction />
-        <DataImportance />
-        <Dashboard />
-        <InterpretiveAnalysis />
-        <Recommendations />
+      <Navbar currentPage={currentPage} onNavigate={handleNavigate} />
+      <main className="pt-16">
+        {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
+        {currentPage === 'analytics' && <AnalyticsPage />}
+        {currentPage === 'explore' && <ExplorePage onNavigate={handleNavigate} />}
       </main>
-      <Footer />
     </div>
   );
 }
