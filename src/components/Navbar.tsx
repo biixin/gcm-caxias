@@ -9,7 +9,7 @@ interface NavbarProps {
 const pages = [
   { id: 'home', label: 'Página Inicial' },
   { id: 'analytics', label: 'Análise de Dados' },
-  { id: 'sisp', label: 'Criação do SISP-DC' },
+  { id: 'sisp', label: 'Criação do SISP-DC (3563)' },
 ];
 
 export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
