@@ -9,6 +9,7 @@ interface NavbarProps {
 const pages = [
   { id: 'home', label: 'Página Inicial' },
   { id: 'analytics', label: 'Análise de Dados' },
+  { id: 'sisp', label: 'Criação do SISP-DC' },
 ];
 
 export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
@@ -46,8 +47,8 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-900/98 shadow-lg shadow-black/20 backdrop-blur-sm'
-          : 'bg-slate-900'
+          ? 'bg-gradient-to-r from-slate-950 via-blue-900 to-slate-900 shadow-lg shadow-black/30 backdrop-blur-sm'
+          : 'bg-gradient-to-r from-slate-950 via-blue-900 to-slate-900 shadow-lg shadow-black/30 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

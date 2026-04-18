@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import HomePage from './components/home/HomePage';
 import AnalyticsPage from './components/analytics/AnalyticsPage';
 import ExplorePage from './components/explore/ExplorePage';
+import SISPPage from './components/sisp/SISPPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
@@ -19,6 +20,7 @@ export default function App() {
         {currentPage === 'home' && <HomePage onNavigate={handleNavigate} />}
         {currentPage === 'analytics' && <AnalyticsPage />}
         {currentPage === 'explore' && <ExplorePage onNavigate={handleNavigate} />}
+        {currentPage === 'sisp' && <SISPPage />}
       </main>
     </div>
   );

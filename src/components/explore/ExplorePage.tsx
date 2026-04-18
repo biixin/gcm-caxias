@@ -1,4 +1,4 @@
-import { ArrowRight, Home, BarChart2 } from 'lucide-react';
+import { ArrowRight, Home, BarChart2, Shield } from 'lucide-react';
 import Footer from '../Footer';
 
 interface ExplorePageProps {
@@ -25,6 +25,16 @@ const pages = [
     tag: 'Relatório',
     tagColor: 'bg-slate-100 text-slate-700 border-slate-200',
     accentColor: 'border-t-slate-500',
+  },
+  {
+    id: 'sisp',
+    icon: Shield,
+    title: 'Criação do SISP-DC',
+    description:
+      'Lei nº 3563/2026 que institui o Sistema de Inteligência de Segurança Pública de Duque de Caxias. Conheça os princípios, competências e atribuições do sistema vinculado à Secretaria Municipal de Segurança Pública.',
+    tag: 'Legislação',
+    tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
+    accentColor: 'border-t-blue-700',
   },
 ];
 
