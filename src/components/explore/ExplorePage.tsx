@@ -1,4 +1,4 @@
-import { ArrowRight, Home, BarChart2, Shield } from 'lucide-react';
+import { ArrowRight, Home, BarChart2, Shield, Brain, Database } from 'lucide-react';
 import Footer from '../Footer';
 
 interface ExplorePageProps {
@@ -15,6 +15,16 @@ const pages = [
     tag: 'Institucional',
     tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
     accentColor: 'border-t-blue-500',
+  },
+  {
+    id: 'intelligence',
+    icon: Brain,
+    title: 'Inteligência',
+    description:
+      'Fundamentos da inteligência na segurança pública, ciclo de inteligência e sua aplicação prática no contexto da Guarda Municipal de Duque de Caxias.',
+    tag: 'Fundamentos',
+    tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
+    accentColor: 'border-t-blue-600',
   },
   {
     id: 'analytics',
@@ -35,6 +45,16 @@ const pages = [
     tag: 'Legislação',
     tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
     accentColor: 'border-t-blue-700',
+  },
+  {
+    id: 'test',
+    icon: Database,
+    title: 'Dados Estatísticos',
+    description:
+      'Registros consolidados de ocorrências anuais em Duque de Caxias (2023–2025), extraídos do portal ISP Dados do Instituto de Segurança Pública do Rio de Janeiro.',
+    tag: 'Base de Dados',
+    tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
+    accentColor: 'border-t-blue-400',
   },
 ];
 

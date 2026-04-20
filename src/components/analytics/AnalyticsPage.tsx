@@ -1,4 +1,3 @@
-import Introduction from '../Introduction';
 import DataImportance from '../DataImportance';
 import Dashboard from '../Dashboard';
 import InterpretiveAnalysis from '../InterpretiveAnalysis';
@@ -29,7 +28,6 @@ export default function AnalyticsPage() {
           </div>
         </div>
       </div>
-      <Introduction />
       <DataImportance />
       <Dashboard />
       <InterpretiveAnalysis />

@@ -1,33 +1,40 @@
-import { Search, FileText, Radio, BookOpen } from 'lucide-react';
+import { Search, FileText, Radio, BookOpen, Zap } from 'lucide-react';
 
 const cycleSteps = [
   {
     icon: Search,
     step: '01',
-    title: 'Coleta',
+    title: 'Objetivar',
     description:
-      'Reunião sistemática de dados e informações oriundos de fontes abertas (OSINT), registros internos da corporação, boletins de ocorrência, câmeras de monitoramento e relatos de agentes em campo.',
+      'Fase inicial em que são definidos os temas, prioridades e áreas de atuação da inteligência. Nesse momento, são estabelecidos os objetos de acompanhamento, com base nos interesses da sociedade e do Estado, transformando demandas em focos de monitoramento contínuo.',
   },
   {
     icon: BookOpen,
     step: '02',
-    title: 'Análise',
+    title: 'Acompanhar',
     description:
-      'Processamento e cruzamento das informações coletadas para identificar padrões, tendências e correlações relevantes. Inclui análise estatística, mapeamento de hotspots e perfilamento de modalidades criminais.',
+      'Fase contínua ao longo de todo o ciclo, voltada ao monitoramento permanente das áreas definidas. Envolve o planejamento, coleta e organização de dados, informações e conhecimentos relevantes para compreender a evolução dos cenários.',
   },
   {
     icon: FileText,
     step: '03',
-    title: 'Produção',
+    title: 'Informar',
     description:
-      'Transformação dos dados analisados em produtos de inteligência: boletins, relatórios, notas técnicas e alertas operacionais, com linguagem adequada a cada nível de comando — tático, operacional e estratégico.',
+      'Ocorre quando são identificados fatos, eventos ou situações que precisam ser comunicados às autoridades. Consiste na produção de conhecimento para apoiar o diagnóstico e orientar decisões, podendo também atender demandas específicas de informação.',
   },
   {
     icon: Radio,
     step: '04',
-    title: 'Difusão',
+    title: 'Decidir',
     description:
-      'Distribuição controlada e tempestiva dos produtos de inteligência aos decisores autorizados, garantindo confidencialidade e maximizando o impacto operacional das informações produzidas.',
+      'Fase em que o gestor utiliza o conhecimento produzido para definir ações. A decisão considera o contexto, os interesses envolvidos e as possíveis consequências, orientando a escolha do melhor caminho a ser seguido pelo Estado.',
+  },
+  {
+    icon: Zap,
+    step: '05',
+    title: 'Agir',
+    description:
+      'Etapa final, em que são executadas as ações definidas anteriormente. Envolve a implementação de medidas pelo Estado, podendo incluir diferentes órgãos, com o objetivo de alcançar os resultados planejados.',
   },
 ];
 
@@ -85,10 +92,17 @@ export default function Introduction() {
 
         {/* Cycle */}
         <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
+          <div className="mb-8 rounded-xl overflow-hidden border border-slate-200 max-w-md mx-auto">
+            <img
+              src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=ciclo.png&version_id=null"
+              alt="Ciclo de Inteligência"
+              className="w-full h-auto object-contain"
+            />
+          </div>
           <h3 className="text-center text-base font-bold text-slate-700 uppercase tracking-wider mb-8">
             Ciclo de Inteligência
           </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center">
             {cycleSteps.map(({ icon: Icon, step, title, description }) => (
               <div key={step} className="relative">
                 <div className="flex flex-col items-center text-center">
