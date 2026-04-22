@@ -1,4 +1,4 @@
-import { ArrowRight, Home, BarChart2, Shield, Brain, Database } from 'lucide-react';
+import { ArrowRight, Home, BarChart2, Shield, Brain, Database, ShieldOff } from 'lucide-react';
 import Footer from '../Footer';
 
 interface ExplorePageProps {
@@ -25,6 +25,16 @@ const pages = [
     tag: 'Fundamentos',
     tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
     accentColor: 'border-t-blue-600',
+  },
+  {
+    id: 'counterintelligence',
+    icon: ShieldOff,
+    title: 'Contrainteligência',
+    description:
+      'O ramo da inteligência voltado à proteção do Estado contra ameaças externas e internas. Conceitos, lógica operacional e aplicação prática na Baixada Fluminense.',
+    tag: 'Proteção',
+    tagColor: 'bg-slate-100 text-slate-700 border-slate-200',
+    accentColor: 'border-t-slate-600',
   },
   {
     id: 'analytics',

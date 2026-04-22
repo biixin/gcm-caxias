@@ -87,6 +87,13 @@ export default function Dashboard() {
               yAxisLabel="Ocorrências"
             />
           </ChartCard>
+
+          {/* Disclaimer sobre dados de exemplo */}
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+            <p className="text-sm text-amber-700 leading-relaxed">
+              <strong>Aviso Importante:</strong> Os dados apresentados nos gráficos acima são baseados em estatísticas reais do ISP-RJ (Instituto de Segurança Pública do Rio de Janeiro) para o município de Duque de Caxias. No entanto, o gráfico de "Ocorrências por Turno do Dia" utiliza dados ilustrativos, pois as informações de faixa horária não estão disponíveis nos arquivos CSV do ISP-RJ. Estes dados servem como exemplo para análises interpretativas e demonstração de metodologias de análise de dados.
+            </p>
+          </div>
         </div>
       </div>
     </section>

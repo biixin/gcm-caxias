@@ -24,17 +24,10 @@ interface AggregatedRow {
   registro_ocorrencias: number;
 }
 
-interface CispRow extends Omit<AggregatedRow, 'ano' | 'munic'> {
-  cisp: string;
-  ano: string;
-}
-
 export default function TestDataPage() {
   const [data, setData] = useState<AggregatedRow[]>([]);
-  const [cispData, setCispData] = useState<CispRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
-  const [selectedYearCisp, setSelectedYearCisp] = useState<string>('all');
 
   const parseCSVLine = (line: string): string[] => {
     const result: string[] = [];
@@ -84,11 +77,6 @@ export default function TestDataPage() {
     return rows;
   };
 
-  const toNum = (val: any) => {
-    const n = Number(val);
-    return isNaN(n) ? 0 : n;
-  };
-
   const aggregateByYear = (rawData: any[]): AggregatedRow[] => {
     const grouped: { [key: string]: AggregatedRow } = {};
 
@@ -114,6 +102,11 @@ export default function TestDataPage() {
         };
       }
 
+      const toNum = (val: any) => {
+        const n = Number(val);
+        return isNaN(n) ? 0 : n;
+      };
+
       grouped[ano].hom_doloso += toNum(row.hom_doloso);
       grouped[ano].lesao_corp_morte += toNum(row.lesao_corp_morte);
       grouped[ano].latrocinio += toNum(row.latrocinio);
@@ -131,53 +124,6 @@ export default function TestDataPage() {
     return Object.values(grouped).sort((a, b) => parseInt(a.ano) - parseInt(b.ano));
   };
 
-  const aggregateByCisp = (rawData: any[]): CispRow[] => {
-    const grouped: { [key: string]: CispRow } = {};
-
-    rawData.forEach((row) => {
-      const cisp = String(row.cisp);
-      const ano = String(row.ano);
-      const key = `${cisp}-${ano}`;
-
-      if (!grouped[key]) {
-        grouped[key] = {
-          cisp,
-          ano,
-          hom_doloso: 0,
-          lesao_corp_morte: 0,
-          latrocinio: 0,
-          feminicidio: 0,
-          lesao_corp_dolosa: 0,
-          estupro: 0,
-          hom_culposo: 0,
-          lesao_corp_culposa: 0,
-          roubo_celular: 0,
-          estelionato: 0,
-          recuperacao_veiculos: 0,
-          registro_ocorrencias: 0,
-        };
-      }
-
-      grouped[key].hom_doloso += toNum(row.hom_doloso);
-      grouped[key].lesao_corp_morte += toNum(row.lesao_corp_morte);
-      grouped[key].latrocinio += toNum(row.latrocinio);
-      grouped[key].feminicidio += toNum(row.feminicidio);
-      grouped[key].lesao_corp_dolosa += toNum(row.lesao_corp_dolosa);
-      grouped[key].estupro += toNum(row.estupro);
-      grouped[key].hom_culposo += toNum(row.hom_culposo);
-      grouped[key].lesao_corp_culposa += toNum(row.lesao_corp_culposa);
-      grouped[key].roubo_celular += toNum(row.roubo_celular);
-      grouped[key].estelionato += toNum(row.estelionato);
-      grouped[key].recuperacao_veiculos += toNum(row.recuperacao_veiculos);
-      grouped[key].registro_ocorrencias += toNum(row.registro_ocorrencias);
-    });
-
-    return Object.values(grouped).sort((a, b) => {
-      if (a.cisp !== b.cisp) return parseInt(a.cisp) - parseInt(b.cisp);
-      return parseInt(a.ano) - parseInt(b.ano);
-    });
-  };
-
   useEffect(() => {
     try {
       const allRows: any[] = [];
@@ -185,7 +131,6 @@ export default function TestDataPage() {
         allRows.push(...parseCSV(csv));
       }
       setData(aggregateByYear(allRows));
-      setCispData(aggregateByCisp(allRows));
     } catch (err) {
       setError('Erro ao processar os dados.');
       console.error(err);
@@ -244,57 +189,6 @@ export default function TestDataPage() {
     a.click();
     window.URL.revokeObjectURL(url);
   };
-
-  const downloadCispCSV = () => {
-    const filtered = selectedYearCisp === 'all' ? cispData : cispData.filter(r => r.ano === selectedYearCisp);
-    if (filtered.length === 0) return;
-
-    const headers = [
-      'CISP',
-      'Ano',
-      'Homicídio Doloso',
-      'Lesão Corporal Morte',
-      'Latrocínio',
-      'Feminicídio',
-      'Lesão Corporal Dolosa',
-      'Estupro',
-      'Homicídio Culposo',
-      'Lesão Corporal Culposa',
-      'Roubo Celular',
-      'Estelionato',
-      'Recuperação de Veículos',
-      'Total de Registros de Ocorrências',
-    ];
-
-    const rows = filtered.map((row) => [
-      row.cisp,
-      row.ano,
-      row.hom_doloso,
-      row.lesao_corp_morte,
-      row.latrocinio,
-      row.feminicidio,
-      row.lesao_corp_dolosa,
-      row.estupro,
-      row.hom_culposo,
-      row.lesao_corp_culposa,
-      row.roubo_celular,
-      row.estelionato,
-      row.recuperacao_veiculos,
-      row.registro_ocorrencias,
-    ]);
-
-    const csvContent = [headers.join(','), ...rows.map((r) => r.join(','))].join('\n');
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `dados_por_cisp${selectedYearCisp !== 'all' ? `_${selectedYearCisp}` : ''}.csv`;
-    a.click();
-    window.URL.revokeObjectURL(url);
-  };
-
-  const availableYears = Array.from(new Set(cispData.map(r => r.ano))).sort();
-  const filteredCispData = selectedYearCisp === 'all' ? cispData : cispData.filter(r => r.ano === selectedYearCisp);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -448,94 +342,6 @@ export default function TestDataPage() {
                       ))}
                     </tbody>
                   </table>
-                </div>
-
-                {/* CISP Section */}
-                <div className="mt-14 pt-10 border-t border-slate-200">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                    <div>
-                      <h2 className="text-xl font-bold text-slate-900">
-                        Dados Agregados por CISP
-                      </h2>
-                      <p className="text-sm text-slate-500 mt-0.5">
-                        Acumulado anual por Circunscrição Integrada de Segurança Pública
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-3 flex-shrink-0">
-                      <select
-                        value={selectedYearCisp}
-                        onChange={(e) => setSelectedYearCisp(e.target.value)}
-                        className="border border-slate-200 rounded-lg px-3 py-2 text-sm text-slate-700 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                      >
-                        <option value="all">Todos os anos</option>
-                        {availableYears.map((y) => (
-                          <option key={y} value={y}>{y}</option>
-                        ))}
-                      </select>
-                      <button
-                        onClick={downloadCispCSV}
-                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium text-sm whitespace-nowrap"
-                      >
-                        <Download size={15} />
-                        Exportar CSV
-                      </button>
-                    </div>
-                  </div>
-
-                  <div className="overflow-x-auto border border-slate-200 rounded-xl shadow-sm">
-                    <table className="w-full text-sm">
-                      <thead className="bg-slate-50 border-b border-slate-200">
-                        <tr>
-                          <th className="px-4 py-3 text-left font-bold text-slate-700 whitespace-nowrap">CISP</th>
-                          <th className="px-4 py-3 text-left font-bold text-slate-700 whitespace-nowrap">Ano</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Hom. Doloso</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Lesão Corp. Morte</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Latrocínio</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Feminicídio</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Lesão Corp. Dolosa</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Estupro</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Hom. Culposo</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Lesão Corp. Culposa</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Roubo Celular</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Estelionato</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Recup. Veículos</th>
-                          <th className="px-4 py-3 text-right font-bold text-slate-700 whitespace-nowrap">Total Ocorrências</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {filteredCispData.map((row, idx) => (
-                          <tr
-                            key={`${row.cisp}-${row.ano}-${idx}`}
-                            className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50'}
-                          >
-                            <td className="px-4 py-3 text-slate-900 font-bold">
-                              <span className="inline-flex items-center justify-center w-8 h-8 bg-blue-100 text-blue-800 text-xs font-black rounded-lg">
-                                {row.cisp}
-                              </span>
-                            </td>
-                            <td className="px-4 py-3 text-slate-600 font-medium">{row.ano}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.hom_doloso.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.lesao_corp_morte.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.latrocinio.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.feminicidio.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.lesao_corp_dolosa.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.estupro.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.hom_culposo.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.lesao_corp_culposa.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.roubo_celular.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.estelionato.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-medium">{row.recuperacao_veiculos.toLocaleString()}</td>
-                            <td className="px-4 py-3 text-right text-slate-900 font-bold">{row.registro_ocorrencias.toLocaleString()}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  <p className="text-xs text-slate-400 mt-3">
-                    Exibindo {filteredCispData.length} registros
-                    {selectedYearCisp !== 'all' ? ` para o ano de ${selectedYearCisp}` : ' (todos os anos)'}
-                  </p>
                 </div>
               </div>
             )}

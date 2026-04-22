@@ -232,7 +232,7 @@ export default function SISPPage() {
             <div className="mb-12 flex justify-center">
               <div className="w-full max-w-2xl rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                 <img
-                  src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=gcm-principios.jpg&version_id=null"
+                  src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=PRINCIPIOS.jpeg&version_id=null"
                   alt="Princípios do SISP-DC"
                   className="w-full h-auto object-contain bg-slate-50"
                 />
@@ -351,13 +351,22 @@ export default function SISPPage() {
             </div>
 
             {/* Map Image */}
-            <div className="mb-12 flex justify-center">
+            <div className="mb-6 flex justify-center">
               <div className="w-full max-w-3xl rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                 <img
                   src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=mapa-dc.png&version_id=null"
                   alt="Mapa das Divisões Distritais de Inteligência"
                   className="w-full h-auto object-contain bg-slate-50"
                 />
+              </div>
+            </div>
+
+            {/* Map Disclaimer */}
+            <div className="mb-12 flex justify-center">
+              <div className="bg-amber-50 border border-amber-200 rounded-xl px-5 py-3 max-w-3xl">
+                <p className="text-xs text-amber-700 text-center leading-relaxed">
+                  <strong>Aviso:</strong> O mapa foi criado apenas como algo ilustrativo, podendo conter erros de divisões territoriais ou de português.
+                </p>
               </div>
             </div>
 

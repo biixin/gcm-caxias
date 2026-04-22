@@ -9,6 +9,7 @@ interface NavbarProps {
 const pages = [
   { id: 'home', label: 'Página Inicial' },
   { id: 'intelligence', label: 'Inteligência' },
+  { id: 'counterintelligence', label: 'Contrainteligência' },
   { id: 'analytics', label: 'Análise de Dados' },
   { id: 'sisp', label: 'Criação do SISP-DC' },
   { id: 'test', label: 'Dados Estatísticos' },

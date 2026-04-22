@@ -6,6 +6,7 @@ import ExplorePage from './components/explore/ExplorePage';
 import SISPPage from './components/sisp/SISPPage';
 import IntelligencePage from './components/intelligence/IntelligencePage';
 import TestDataPage from './components/test/TestDataPage';
+import CounterIntelligencePage from './components/counterintelligence/CounterIntelligencePage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
@@ -24,6 +25,7 @@ export default function App() {
         {currentPage === 'explore' && <ExplorePage onNavigate={handleNavigate} />}
         {currentPage === 'sisp' && <SISPPage />}
         {currentPage === 'intelligence' && <IntelligencePage />}
+        {currentPage === 'counterintelligence' && <CounterIntelligencePage />}
         {currentPage === 'test' && <TestDataPage />}
       </main>
     </div>

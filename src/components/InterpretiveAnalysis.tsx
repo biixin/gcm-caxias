@@ -4,7 +4,7 @@ const findings = [
   {
     type: 'increase',
     icon: TrendingUp,
-    region: 'Centro e Parque Duque',
+    region: '',
     crime: 'Furto em Comércio',
     detail:
       'Aumento de aproximadamente 18% no número de furtos nas regiões de maior densidade comercial. O padrão temporal indica concentração entre 11h e 13h (horário de pico do comércio) e entre 17h e 19h (saída de estabelecimentos).',
@@ -12,7 +12,7 @@ const findings = [
   {
     type: 'decrease',
     icon: TrendingDown,
-    region: 'Saracuruna e Xerém',
+    region: '',
     crime: 'Roubo a Pedestre',
     detail:
       'Redução de 12% nos registros de roubo a pedestre nos últimos 6 meses, possivelmente associada à implantação de rondas preventivas sistemáticas e ao incremento de câmeras de monitoramento nas vias principais.',
@@ -20,7 +20,7 @@ const findings = [
   {
     type: 'alert',
     icon: AlertTriangle,
-    region: 'Jardim Primavera',
+    region: '',
     crime: 'Tráfico de Entorpecentes',
     detail:
       'Crescimento expressivo de ocorrências ligadas ao tráfico, especialmente no período noturno (22h–02h). A região apresenta vulnerabilidade por conta da baixa iluminação pública e ausência de pontos de monitoramento eletrônico.',
