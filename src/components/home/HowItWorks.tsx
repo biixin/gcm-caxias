@@ -85,7 +85,7 @@ export default function HowItWorks() {
           <div className="text-center md:text-left">
             <h3 className="text-xl font-bold mb-2">Pronto para começar?</h3>
             <p className="text-blue-200 text-sm leading-relaxed max-w-lg">
-              Acesse o módulo de Análise de Dados e veja na prática como a inteligência aplicada
+              Acesse o nosso primeiro módulo e veja na prática como a inteligência aplicada
               pode transformar a atuação da sua corporação.
             </p>
           </div>

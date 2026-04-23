@@ -630,6 +630,61 @@ export default function PsyopPage() {
           </div>
         </section>
 
+        {/* SEÇÃO 9 — Recomendações de Leitura e Vídeos */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-12">
+              <span className="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">
+                Seção 09
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                Materiais Recomendados
+              </h2>
+              <div className="w-14 h-1 bg-blue-600 rounded mb-6" />
+              <p className="text-slate-600 leading-relaxed max-w-2xl">
+                Vídeos e materiais adicionais para aprofundamento teórico e prático sobre PSYOP.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: 'Vídeo 1 — Demonstrativo',
+                  description: 'Fundamentos teóricos e históricos das operações psicológicas.',
+                  url: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2%20c.mp4&version_id=null',
+                  poster: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1thumb.png&version_id=null',
+                },
+                {
+                  title: 'Vídeo 2 — Aplicações Práticas',
+                  description: 'Casos de estudo e aplicações reais de PSYOP em contextos de segurança.',
+                  url: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1.mp4&version_id=null',
+                  poster: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2thumb.png&version_id=null',
+                },
+              ].map((video, idx) => (
+                <div key={idx} className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                  <div className="relative bg-slate-900 aspect-video overflow-hidden">
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      preload="none"
+                      poster={video.poster}
+                    >
+                      <source src={video.url} type="video/mp4" />
+                      Seu navegador não suporta vídeos HTML5.
+                    </video>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-slate-900 text-lg mb-2">{video.title}</h3>
+                    <p className="text-sm text-slate-600 leading-relaxed">{video.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            
+          </div>
+        </section>
+
       </main>
 
       <Footer />

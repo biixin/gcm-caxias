@@ -1,4 +1,4 @@
-import { ArrowRight, Home, BarChart2, Shield, Brain, Database, ShieldOff } from 'lucide-react';
+import { ArrowRight, Home, BarChart2, Shield, Brain, Database, ShieldOff, MapPin, Zap } from 'lucide-react';
 import Footer from '../Footer';
 
 interface ExplorePageProps {
@@ -65,6 +65,26 @@ const pages = [
     tag: 'Base de Dados',
     tagColor: 'bg-blue-50 text-blue-700 border-blue-200',
     accentColor: 'border-t-blue-400',
+  },
+  {
+    id: 'psyop',
+    icon: Zap,
+    title: 'PSYOP',
+    description:
+      'Operações psicológicas, estratégias de comunicação institucional e aplicações no contexto da segurança pública da Baixada Fluminense.',
+    tag: 'Estratégia',
+    tagColor: 'bg-amber-50 text-amber-700 border-amber-200',
+    accentColor: 'border-t-amber-600',
+  },
+  {
+    id: 'risp',
+    icon: MapPin,
+    title: 'Divisão Territorial (RISP)',
+    description:
+      'Estrutura territorial da segurança pública do RJ, organização em CISP, AISP e RISP, e análise detalhada da divisão em Duque de Caxias.',
+    tag: 'Territorialidade',
+    tagColor: 'bg-red-50 text-red-700 border-red-200',
+    accentColor: 'border-t-red-600',
   },
 ];
 

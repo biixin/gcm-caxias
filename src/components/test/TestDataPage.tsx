@@ -497,17 +497,6 @@ export default function TestDataPage() {
                     </button>
                   </div>
 
-                  {/* Cards de CISP */}
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                    {Object.entries(CISP_LABELS).map(([cisp, label]) => (
-                      <div key={cisp} className="bg-slate-50 border border-slate-100 rounded-xl p-3 flex items-center gap-3">
-                        <span className={`w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-black flex-shrink-0 ${CISP_COLORS[cisp] ?? 'bg-slate-600'}`}>
-                          {cisp}
-                        </span>
-                        <span className="text-xs text-slate-600 leading-snug font-medium">{label}</span>
-                      </div>
-                    ))}
-                  </div>
 
                   {/* Filtro de Ano */}
                   <div className="flex items-center gap-3 bg-slate-50 border border-slate-100 rounded-xl px-4 py-3 mb-6 w-fit">
@@ -547,7 +536,6 @@ export default function TestDataPage() {
                       <thead className="bg-slate-800 border-b border-slate-700">
                         <tr>
                           <th className="px-4 py-3 text-left font-bold text-white">CISP</th>
-                          <th className="px-4 py-3 text-left font-bold text-white">Distrito</th>
                           {cispYearFilter === 'todos' && (
                             <th className="px-4 py-3 text-left font-bold text-white">Período</th>
                           )}
@@ -579,7 +567,6 @@ export default function TestDataPage() {
                                 {row.cisp}
                               </span>
                             </td>
-                            <td className="px-4 py-3 text-slate-700 font-medium text-xs md:text-sm whitespace-nowrap">{row.cispLabel}</td>
                             <td className="px-4 py-3">
                               {row.ano === 'Todos' ? (
                                 <span className="text-xs font-bold text-slate-500 bg-slate-100 border border-slate-200 rounded-full px-2.5 py-0.5 whitespace-nowrap">
