@@ -7,6 +7,7 @@ import SISPPage from './components/sisp/SISPPage';
 import IntelligencePage from './components/intelligence/IntelligencePage';
 import TestDataPage from './components/test/TestDataPage';
 import CounterIntelligencePage from './components/counterintelligence/CounterIntelligencePage';
+import PsyopPage from './components/psyop/PsyopPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<string>('home');
@@ -26,6 +27,7 @@ export default function App() {
         {currentPage === 'sisp' && <SISPPage />}
         {currentPage === 'intelligence' && <IntelligencePage />}
         {currentPage === 'counterintelligence' && <CounterIntelligencePage />}
+        {currentPage === 'psyop' && <PsyopPage />}
         {currentPage === 'test' && <TestDataPage />}
       </main>
     </div>
