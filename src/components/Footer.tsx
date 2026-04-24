@@ -31,7 +31,7 @@ export default function Footer() {
           <p className="flex-shrink-0">Duque de Caxias — RJ · 2024</p>
         </div>
         <div className="mt-4 pt-4 border-t border-slate-800 text-center text-xs text-slate-500">
-          <p>Site desenvolvido por <span className="text-slate-400 font-medium">Matheus Almeida</span> · Pesquisa e elaboração de conteúdo: <span className="text-slate-400 font-medium">Bahia</span></p>
+          <p>Site desenvolvido por <span className="text-slate-400 font-medium">Matheus Almeida</span> · Pesquisa e elaboração de conteúdo: <span className="text-slate-400 font-medium">Eduardo Miguel</span></p>
         </div>
       </div>
     </footer>

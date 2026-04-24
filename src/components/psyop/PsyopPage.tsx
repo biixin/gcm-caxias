@@ -646,39 +646,82 @@ export default function PsyopPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'Vídeo 1 — Demonstrativo',
-                  description: 'Fundamentos teóricos e históricos das operações psicológicas.',
-                  url: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2%20c.mp4&version_id=null',
-                  poster: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1thumb.png&version_id=null',
-                },
-                {
-                  title: 'Vídeo 2 — Aplicações Práticas',
-                  description: 'Casos de estudo e aplicações reais de PSYOP em contextos de segurança.',
-                  url: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1.mp4&version_id=null',
-                  poster: 'https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2thumb.png&version_id=null',
-                },
-              ].map((video, idx) => (
-                <div key={idx} className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="relative bg-slate-900 aspect-video overflow-hidden">
-                    <video
-                      className="w-full h-full object-cover"
-                      controls
-                      preload="none"
-                      poster={video.poster}
-                    >
-                      <source src={video.url} type="video/mp4" />
-                      Seu navegador não suporta vídeos HTML5.
-                    </video>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-bold text-slate-900 text-lg mb-2">{video.title}</h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">{video.description}</p>
+            <div className="space-y-12">
+              {/* Vídeo 1 */}
+              <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div className="relative bg-slate-900 aspect-video overflow-hidden">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="none"
+                    poster="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2thumb.png&version_id=null"
+                  >
+                    <source src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1.mp4&version_id=null" type="video/mp4" />
+                    Seu navegador não suporta vídeos HTML5.
+                  </video>
+                </div>
+                <div className="p-6 md:p-8">
+                  <h3 className="font-bold text-slate-900 text-lg mb-4">Vídeo 1 — Eventos Internos e Percepção de Segurança</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    Eventos internos de alto impacto, como a morte ou afastamento de uma liderança, podem alterar a percepção de segurança e confiança dentro de uma organização criminosa. Esses episódios tendem a gerar incerteza, disputas internas e maior percepção de vulnerabilidade. Em paralelo, ações institucionais de comunicação e políticas de justiça podem aproveitar esse contexto para reforçar a percepção de risco, ampliar incentivos legais à colaboração e estimular a reavaliação de decisões individuais. Nesses casos, o fator decisivo não é o evento em si, mas a forma como ele é percebido e o ambiente de informação ao redor.
+                  </p>
+                  <br></br>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                    Em cenários de disputa estratégica, campanhas de influência podem explorar fatores como:
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    {[
+                      'Incerteza organizacional',
+                      'Percepção de risco pessoal',
+                      'Confiança entre membros de uma instituição',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0 mt-1.5" />
+                        <span className="text-sm text-slate-700 font-medium">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                    Quando esses elementos são afetados, podem surgir efeitos como:
+                  </p>
+                  <ul className="space-y-2 mb-4">
+                    {[
+                      'Aumento da cautela ou hesitação',
+                      'Redução da coesão interna',
+                      'Maior abertura a alternativas (ex: cooperação, deserção, mudança de comportamento)',
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-slate-500 flex-shrink-0 mt-1.5" />
+                        <span className="text-sm text-slate-600">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                      O ponto-chave: não é a violência em si, mas a <strong className="text-blue-800">percepção de vulnerabilidade e risco</strong> que impacta o comportamento.
+                    </p>
+                </div>
+              </div>
+
+              {/* Vídeo 2 */}
+              <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div className="relative bg-slate-900 aspect-video overflow-hidden">
+                  <video
+                    className="w-full h-full object-cover"
+                    controls
+                    preload="none"
+                    poster="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1thumb.png&version_id=null"
+                  >
+                    <source src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2%20c.mp4&version_id=null" type="video/mp4" />
+                    Seu navegador não suporta vídeos HTML5.
+                  </video>
+                </div>
+                <div className="p-6 md:p-8">
+                  <h3 className="font-bold text-slate-900 text-lg mb-4">Vídeo 2 — Dinâmica Psicológica em Operações de Influência</h3>
+                  
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
 
             
