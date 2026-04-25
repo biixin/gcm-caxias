@@ -1,4 +1,5 @@
 import { ShieldCheck, ChevronDown } from 'lucide-react';
+import { MEDIA_URLS } from '../../constants/media';
 
 interface HeroBannerProps {
   onNavigate: (page: string) => void;
@@ -21,18 +22,24 @@ export default function HeroBanner({ onNavigate }: HeroBannerProps) {
           </span>
         </div>
 
+        <div className="mb-8 flex justify-center">
+          <img
+            src={MEDIA_URLS.logos.siteLogo}
+            alt="Logo GCM Inteligência"
+            className="h-64 w-auto object-contain"
+          />
+        </div>
+
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 tracking-tight">
-          Plataforma de{' '}
+          Núcleo de{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
             Inteligência
           </span>{' '}
-          Aplicada Regional
+          Aplicada
         </h1>
 
         <p className="text-lg sm:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-10 font-light">
-          Uma plataforma de capacitação voltada para profissionais de segurança pública da
-          Baixada Fluminense, integrando conhecimento analítico, inteligência operacional e
-          tecnologia aplicada à proteção da comunidade.
+          Uma plataforma de capacitação e integração em inteligência com foco regional, que promove cooperação interinstitucional e produção de conhecimento aplicado, com acesso controlado e foco em resultados.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -65,7 +65,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             className="flex items-center gap-3 group"
           >
             <img
-              src={MEDIA_URLS.logos.gcmLogo}
+              src={MEDIA_URLS.logos.siteLogo}
               alt="Logo GCM"
               className="h-10 w-auto object-contain"
               onError={(e) => {
@@ -73,7 +73,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               }}
             />
             <div className="hidden sm:block">
-              <p className="text-white font-bold text-sm leading-tight">Guarda Municipal</p>
+              <p className="text-white font-bold text-sm leading-tight">Núclo de Inteligência Aplicada</p>
               <p className="text-blue-400 text-xs leading-tight">Duque de Caxias</p>
             </div>
           </button>

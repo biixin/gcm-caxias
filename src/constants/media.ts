@@ -8,6 +8,7 @@ export const MEDIA_URLS = {
   logos: {
     intelligenceLogo: 'https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/logo%20inteligencia-Photoroom.png?alt=media&token=c18680f6-f667-4993-b051-51995b0e8e14',
     gcmLogo: 'https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/logo-gcm-sem%20fundo.png?alt=media&token=abcb7bfd-cecf-4101-87b9-83f942235ebd',
+    siteLogo: 'https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/logo-site%20sem%20fundo.png?alt=media&token=fd042056-61d1-47ec-88e2-4e704a3d3024'
   },
 
   // RISP Page
