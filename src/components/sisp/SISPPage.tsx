@@ -1,5 +1,6 @@
 import { Scale, Users, Heart, Eye, Zap, Shield, FileText, BookOpen, BarChart2, Lock, Cpu, Search, ChevronRight, Map } from 'lucide-react';
 import Footer from '../Footer';
+import { MEDIA_URLS } from '../../constants/media';
 
 const principles = [
   {
@@ -232,7 +233,7 @@ export default function SISPPage() {
             <div className="mb-12 flex justify-center">
               <div className="w-full max-w-2xl rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                 <img
-                  src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=PRINCIPIOS.jpeg&version_id=null"
+                  src={MEDIA_URLS.sisp.principles}
                   alt="Princípios do SISP-DC"
                   className="w-full h-auto object-contain bg-slate-50"
                 />
@@ -354,7 +355,7 @@ export default function SISPPage() {
             <div className="mb-6 flex justify-center">
               <div className="w-full max-w-3xl rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
                 <img
-                  src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=mapa-dc.png&version_id=null"
+                  src={MEDIA_URLS.sisp.mapDc}
                   alt="Mapa das Divisões Distritais de Inteligência"
                   className="w-full h-auto object-contain bg-slate-50"
                 />

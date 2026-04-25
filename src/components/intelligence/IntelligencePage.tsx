@@ -68,7 +68,7 @@ export default function IntelligencePage() {
                 <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6 mb-2">
                   <div className="mb-4 rounded-xl overflow-hidden border border-slate-200">
                     <img
-                      src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=niveis.png&version_id=null"
+                      src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/niveis.png?alt=media&token=f91ca727-9a34-4e54-8289-b9da48824ac8"
                       alt="Níveis de Inteligência"
                       className="w-full h-auto object-contain"
                     />

@@ -240,7 +240,7 @@ export default function CounterIntelligencePage() {
             {/* CIPEA Image - Desktop */}
             <div className="hidden md:block mt-12">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=CI%20P%20E%20A.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/CI%20P%20E%20A.png?alt=media&token=b26a478d-d2ea-43f4-9fe3-bd97e5186ed7"
                 alt="CIPEA - Contrainteligência Preventiva e Ativa"
                 className="w-full rounded-2xl shadow-lg"
               />
@@ -248,7 +248,7 @@ export default function CounterIntelligencePage() {
             {/* CIPEA Image - Mobile */}
             <div className="md:hidden mt-8">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=CIPEA%20MOBILE.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/CIPEA%20MOBILE.png?alt=media&token=136bdfbb-79bd-4bfa-8716-8d82faafc885"
                 alt="CIPEA - Contrainteligência Preventiva e Ativa"
                 className="w-full rounded-2xl shadow-lg"
               />
@@ -391,7 +391,7 @@ export default function CounterIntelligencePage() {
               {/* 3 Pilares Image - Desktop */}
               <div className="hidden md:block mt-8">
                 <img
-                  src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=3pilarpc.png&version_id=null"
+                  src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/3pilarpc.png?alt=media&token=c7ff0c4c-ab83-4a53-9adf-89c1d10a13b7"
                   alt="Os Três Pilares da Contrainteligência"
                   className="w-full rounded-2xl shadow-lg"
                 />
@@ -399,7 +399,7 @@ export default function CounterIntelligencePage() {
               {/* 3 Pilares Image - Mobile */}
               <div className="md:hidden mt-6">
                 <img
-                  src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=3pilarmb.png&version_id=null"
+                  src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/3pilarmb.png?alt=media&token=5eb38bd2-d1ab-4a95-ad03-079170508266"
                   alt="Os Três Pilares da Contrainteligência"
                   className="w-full rounded-2xl shadow-lg"
                 />

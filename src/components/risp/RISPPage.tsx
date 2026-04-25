@@ -1,5 +1,6 @@
 import { MapPin, Layers, Target, ArrowRight, Shield, Building2, Users, BarChart3, ChevronRight, Globe, Crosshair, Network } from 'lucide-react';
 import Footer from '../Footer';
+import { MEDIA_URLS } from '../../constants/media';
 
 const territorialLevels = [
   {
@@ -293,14 +294,14 @@ export default function RISPPage() {
               <div className="grid lg:grid-cols-2 gap-6 mb-6">
                 <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
                   <img
-                    src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=RISP.png&version_id=null"
+                    src={MEDIA_URLS.risp.risp}
                     alt="RISP"
                     className="w-full h-auto object-cover"
                   />
                 </div>
                 <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
                   <img
-                    src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=AISP.png&version_id=null"
+                    src={MEDIA_URLS.risp.aisp}
                     alt="AISP"
                     className="w-full h-auto object-cover"
                   />
@@ -308,7 +309,7 @@ export default function RISPPage() {
               </div>
               <div className="rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200">
                 <img
-                  src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=CISP.png&version_id=null"
+                  src={MEDIA_URLS.risp.cisp}
                   alt="CISP"
                   className="w-full h-auto object-cover"
                 />

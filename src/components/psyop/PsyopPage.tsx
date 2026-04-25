@@ -205,14 +205,14 @@ export default function PsyopPage() {
 
             <div className="hidden md:block mt-12">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=psyop%20pc.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/psyop%20pc.png?alt=media&token=86f80e4f-8604-4e42-8a06-5e6e22602edf"
                 alt="PSYOP - Definição e Essência"
                 className="w-full rounded-2xl shadow-lg"
               />
             </div>
             <div className="md:hidden mt-8">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=psyop%20mb.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/psyop%20mb.png?alt=media&token=effbe8d3-687b-4034-bb8d-a29b3f4f05e1"
                 alt="PSYOP - Definição e Essência"
                 className="w-full rounded-2xl shadow-lg"
               />
@@ -377,14 +377,14 @@ export default function PsyopPage() {
 
             <div className="hidden md:block mt-12">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=psyop%20pcc%20(1).png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/psyop%20pcc%20(1).png?alt=media&token=32d10f56-ae69-4c3f-9ae6-b43db23acf75"
                 alt="PSYOP - Estrutura e Classificação"
                 className="w-full rounded-2xl shadow-lg"
               />
             </div>
             <div className="md:hidden mt-8">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=psyop%20mbb.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/psyop%20mbb.png?alt=media&token=77c7c010-7b0e-4238-af29-1f9897c3c098"
                 alt="PSYOP - Estrutura e Classificação"
                 className="w-full rounded-2xl shadow-lg"
               />
@@ -446,14 +446,14 @@ export default function PsyopPage() {
 
             <div className="hidden md:block mt-12">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=psyop%20logic%20pc.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/psyop%20logic%20pc.png?alt=media&token=ddc0fc6c-5fcf-451c-8a2d-a11d8b96ad30"
                 alt="PSYOP - Lógica de Emprego"
                 className="w-full rounded-2xl shadow-lg"
               />
             </div>
             <div className="md:hidden mt-8">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=psyop%20logic%20mb.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/psyop%20logic%20mb.png?alt=media&token=9e07a0f9-d354-4160-bc4c-057a06b221ef"
                 alt="PSYOP - Lógica de Emprego"
                 className="w-full rounded-2xl shadow-lg"
               />
@@ -654,9 +654,9 @@ export default function PsyopPage() {
                     className="w-full h-full object-cover"
                     controls
                     preload="none"
-                    poster="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2thumb.png&version_id=null"
+                    poster="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/video2thumb.png?alt=media&token=e8d315c2-8bba-45c0-9b9f-d318151c874f"
                   >
-                    <source src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1.mp4&version_id=null" type="video/mp4" />
+                    <source src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/video1.mp4?alt=media&token=3ed8e033-259f-49cb-8a3a-78c436ae2f36" type="video/mp4" />
                     Seu navegador não suporta vídeos HTML5.
                   </video>
                 </div>
@@ -710,9 +710,9 @@ export default function PsyopPage() {
                     className="w-full h-full object-cover"
                     controls
                     preload="none"
-                    poster="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video1thumb.png&version_id=null"
+                    poster="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/video1thumb.png?alt=media&token=03db9239-e2a5-4bae-9d2f-2635bc1b1a0a"
                   >
-                    <source src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=video2%20c.mp4&version_id=null" type="video/mp4" />
+                    <source src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/video2%20c.mp4?alt=media&token=2612a10b-2d5d-423d-b7d9-2ed71db99633" type="video/mp4" />
                     Seu navegador não suporta vídeos HTML5.
                   </video>
                 </div>

@@ -1,4 +1,5 @@
 import { Search, FileText, Radio, BookOpen, Zap } from 'lucide-react';
+import { MEDIA_URLS } from '../constants/media';
 
 const cycleSteps = [
   {
@@ -94,7 +95,7 @@ export default function Introduction() {
         <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
           <div className="mb-8 rounded-xl overflow-hidden border border-slate-200 max-w-md mx-auto">
             <img
-              src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=ciclo.png&version_id=null"
+              src={MEDIA_URLS.introduction.cycle}
               alt="Ciclo de Inteligência"
               className="w-full h-auto object-contain"
             />

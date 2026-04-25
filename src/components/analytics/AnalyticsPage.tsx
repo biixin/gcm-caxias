@@ -12,7 +12,7 @@ export default function AnalyticsPage() {
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
             <div className="flex-shrink-0">
               <img
-                src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=logo%20inteligencia-Photoroom.png&version_id=null"
+                src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/logo%20inteligencia-Photoroom.png?alt=media&token=c18680f6-f667-4993-b051-51995b0e8e14"
                 alt="Logo Inteligência"
                 className="w-24 h-24 object-contain"
               />

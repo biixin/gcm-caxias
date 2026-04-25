@@ -1,3 +1,5 @@
+import { MEDIA_URLS } from '../constants/media';
+
 export default function Header() {
   return (
     <header className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
@@ -6,7 +8,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
-              src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=logo%20inteligencia-Photoroom.png&version_id=null"
+              src={MEDIA_URLS.logos.intelligenceLogo}
               alt="Logo Inteligência"
               className="w-24 h-24 object-contain"
             />

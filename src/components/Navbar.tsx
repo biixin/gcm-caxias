@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronDown, Menu, X, Shield } from 'lucide-react';
+import { MEDIA_URLS } from '../constants/media';
 
 interface NavbarProps {
   currentPage: string;
@@ -64,7 +65,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             className="flex items-center gap-3 group"
           >
             <img
-              src="https://console-typebot-minio.kjufc9.easypanel.host/api/v1/buckets/hot-mj/objects/download?preview=true&prefix=logo-gcm-sem%20fundo.png&version_id=null"
+              src={MEDIA_URLS.logos.gcmLogo}
               alt="Logo GCM"
               className="h-10 w-auto object-contain"
               onError={(e) => {
