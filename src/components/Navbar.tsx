@@ -13,6 +13,7 @@ const pages = [
   { id: 'counterintelligence', label: 'Contrainteligência' },
   { id: 'psyop', label: 'PSYOP' },
   { id: 'osint', label: 'OSINT' },
+  { id: 'humint', label: 'HUMINT' },
   { id: 'risp', label: 'Divisão Territorial (RISP)' },
   { id: 'analytics', label: 'Análise de Dados' },
   { id: 'sisp', label: 'Criação do SISP-DC' },

@@ -9,6 +9,7 @@ import TestDataPage from './components/test/TestDataPage';
 import CounterIntelligencePage from './components/counterintelligence/CounterIntelligencePage';
 import PsyopPage from './components/psyop/PsyopPage';
 import OSINTPage from './components/osint/OSINTPage';
+import HUMINTPage from './components/humint/HUMINTPage';
 import RISPPage from './components/risp/RISPPage';
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
         {currentPage === 'counterintelligence' && <CounterIntelligencePage />}
         {currentPage === 'psyop' && <PsyopPage />}
         {currentPage === 'osint' && <OSINTPage />}
+        {currentPage === 'humint' && <HUMINTPage />}
         {currentPage === 'risp' && <RISPPage />}
         {currentPage === 'test' && <TestDataPage />}
       </main>
