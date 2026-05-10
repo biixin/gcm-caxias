@@ -41,7 +41,7 @@ const cycleSteps = [
 
 export default function Introduction() {
   return (
-    <section id="section-0" className="py-14 md:py-20 bg-white">
+    <section id="section-0" className="py-14 md:py-20 bg-slate-50">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section header */}
         <div className="mb-12">
