@@ -1,4 +1,4 @@
-import { Brain, ChevronRight, Shield, Target, Zap, TrendingUp } from 'lucide-react';
+import { Brain, ChevronRight, Shield, Target, Zap, TrendingUp, AlertCircle, Clock, BookOpen, Compass, Users, Wifi, Globe, Share2 } from 'lucide-react';
 import Introduction from '../Introduction';
 import Footer from '../Footer';
 
@@ -34,23 +34,225 @@ const operationalRules = [
 const intelligenceClassifications = [
   {
     title: 'Inteligência de Base',
-    desc: 'Destinada à compreensão ampla e contextual dos temas acompanhados. Envolve levantamento de dados históricos, atores, relações e variáveis relevantes, constituindo um referencial sólido que sustenta análises futuras.',
     icon: Brain,
+    objective: 'A Inteligência de Base tem como objetivo construir o conjunto inicial de referências sobre determinado tema, ator, fenômeno ou situação. Ela funciona como a estrutura que sustenta análises futuras mais aprofundadas.',
+    details: 'Seu foco está na contextualização, reunindo informações históricas, sociais, econômicas e políticas relacionadas ao objeto estudado. O objetivo principal não é agir imediatamente, mas criar uma compreensão ampla e organizada do cenário analisado.',
+    characteristics: [
+      'Desenvolvimento histórico do tema',
+      'Contextualização política, social e econômica',
+      'Organização de dados e referências',
+      'Formação de base analítica para estudos futuros',
+    ],
+    examples: [
+      'Histórico de organizações criminosas',
+      'Estudos políticos e sociais',
+      'Indicadores econômicos',
+      'Perfil de atores relevantes',
+    ],
   },
   {
     title: 'Inteligência Estratégica',
-    desc: 'Voltada à análise de fenômenos com potencial de impactar interesses fundamentais do Estado. Busca identificar tendências, cenários, riscos e oportunidades.',
     icon: Target,
+    objective: 'A Inteligência Estratégica é voltada aos interesses fundamentais do Estado e ao apoio na formulação de políticas públicas. Seu foco está na análise de fenômenos capazes de impactar a segurança, a economia, a soberania e a estabilidade institucional.',
+    details: 'Trabalha com visão ampla e de longo prazo, buscando identificar tendências, ameaças, oportunidades e possíveis cenários futuros. Diferentemente da Inteligência de Base, ela não apenas contextualiza, mas também interpreta e projeta consequências.',
+    characteristics: [
+      'Visão estratégica e de longo prazo',
+      'Construção de cenários futuros',
+      'Identificação de ameaças e oportunidades',
+      'Apoio ao planejamento estatal',
+    ],
+    examples: [
+      'Tendências geopolíticas',
+      'Ameaças cibernéticas globais',
+      'Estudos sobre extremismo',
+      'Impactos internacionais para o Brasil',
+    ],
   },
   {
     title: 'Inteligência Tática',
-    desc: 'Direcionada ao assessoramento da implementação de políticas e ações governamentais. Foca em situações concretas, analisando atores e capacidades envolvidas.',
     icon: Zap,
+    objective: 'A Inteligência Tática atua como elo entre o planejamento estratégico e a execução operacional. Seu objetivo é apoiar a implementação de políticas públicas e orientar decisões práticas relacionadas a situações específicas.',
+    details: 'Ela trabalha com análise de atores, capacidades, riscos e variáveis diretamente ligadas ao problema estudado, com foco mais imediato e concreto.',
+    characteristics: [
+      'Apoio à implementação de ações governamentais',
+      'Análise de situações específicas',
+      'Estudo de riscos e viabilidade',
+      'Foco em curto e médio prazo',
+    ],
+    examples: [
+      'Avaliação de operações',
+      'Caracterização de grupos criminosos',
+      'Estudos de apoio operacional',
+      'Análise de ações governamentais',
+    ],
   },
   {
     title: 'Inteligência Operacional',
-    desc: 'Focada no apoio direto à execução de ações no terreno. Produz conhecimento de curto prazo, baseado em fatos e eventos em curso.',
     icon: TrendingUp,
+    objective: 'A Inteligência Operacional está diretamente ligada à execução prática das ações do Estado. Seu objetivo é fornecer informações imediatas para apoiar operações em andamento.',
+    details: 'Ela acompanha eventos em tempo real e produz conhecimentos úteis para decisões relacionadas ao emprego de recursos humanos, logísticos e técnicos.',
+    characteristics: [
+      'Apoio direto às operações',
+      'Produção de informações imediatas',
+      'Monitoramento em tempo real',
+      'Suporte logístico e tático',
+    ],
+    examples: [
+      'Operações policiais',
+      'Segurança de autoridades',
+      'Monitoramento operacional',
+      'Resposta a ataques cibernéticos',
+    ],
+  },
+];
+
+const intelligenceTemporalClassifications = [
+  {
+    title: 'Inteligência de Alerta',
+    icon: AlertCircle,
+    objective: 'A Inteligência de Alerta busca antecipar ameaças, riscos ou eventos que possam impactar a segurança da sociedade e do Estado. Seu objetivo é fornecer aviso prévio suficiente para permitir ações preventivas.',
+    details: 'Ela trabalha com análise de intenções, capacidades e comportamentos de atores considerados ameaçadores.',
+    characteristics: [
+      'Antecipação de ameaças',
+      'Produção de avisos preventivos',
+      'Monitoramento contínuo',
+      'Redução do fator surpresa',
+    ],
+    examples: [
+      'Alertas sanitários',
+      'Ameaças terroristas',
+      'Riscos cibernéticos',
+      'Possíveis conflitos',
+    ],
+  },
+  {
+    title: 'Inteligência Corrente',
+    icon: Clock,
+    objective: 'A Inteligência Corrente acompanha fatos e situações em desenvolvimento, mantendo autoridades constantemente atualizadas sobre acontecimentos relevantes.',
+    details: 'Seu foco está na evolução imediata dos eventos, sendo muito utilizada em contextos de crise ou mudanças rápidas.',
+    characteristics: [
+      'Atualização contínua',
+      'Informações rápidas e objetivas',
+      'Monitoramento de eventos em andamento',
+      'Acompanhamento de curto prazo',
+    ],
+    examples: [
+      'Crises econômicas',
+      'Manifestações públicas',
+      'Emergências ambientais',
+      'Monitoramento operacional',
+    ],
+  },
+  {
+    title: 'Inteligência Explanativa',
+    icon: BookOpen,
+    objective: 'A Inteligência Explanativa procura compreender e explicar fenômenos relevantes, identificando causas, dinâmicas e possíveis consequências.',
+    details: 'Ela combina descrição e interpretação para permitir melhor entendimento dos fatores que influenciam determinada situação.',
+    characteristics: [
+      'Explicação de fenômenos complexos',
+      'Interpretação de dinâmicas sociais e políticas',
+      'Produção de análises contextualizadas',
+      'Pequenas projeções futuras',
+    ],
+    examples: [
+      'Radicalização política',
+      'Movimentos sociais',
+      'Relações internacionais',
+      'Organizações extremistas',
+    ],
+  },
+  {
+    title: 'Inteligência Prospectiva',
+    icon: Compass,
+    objective: 'A Inteligência Prospectiva trabalha com construção de cenários futuros de médio e longo prazo. Seu objetivo é reduzir incertezas e orientar decisões estratégicas.',
+    details: 'Ela analisa tendências, comportamentos históricos e variáveis capazes de influenciar o futuro.',
+    characteristics: [
+      'Construção de cenários',
+      'Análise de tendências',
+      'Planejamento estratégico',
+      'Visão de longo prazo',
+    ],
+    examples: [
+      'Tendências geopolíticas',
+      'Projeções econômicas',
+      'Segurança nacional futura',
+      'Avaliação de acordos internacionais',
+    ],
+  },
+];
+
+const intelligenceDataOriginClassifications = [
+  {
+    title: 'HUMINT — Inteligência de Fontes Humanas',
+    icon: Users,
+    objective: 'A HUMINT utiliza informações obtidas diretamente de pessoas, como informantes, testemunhas, colaboradores ou agentes infiltrados.',
+    details: 'Seu principal desafio está na necessidade de validar os dados devido à possibilidade de distorções humanas.',
+    characteristics: [
+      'Uso de fontes humanas',
+      'Elevado valor contextual',
+      'Necessidade de validação crítica',
+      'Informações baseadas em relatos',
+    ],
+    examples: [
+      'Informantes',
+      'Entrevistas',
+      'Depoimentos',
+      'Agentes infiltrados',
+    ],
+  },
+  {
+    title: 'TECHINT — Inteligência de Fontes Técnicas',
+    icon: Wifi,
+    objective: 'A TECHINT utiliza equipamentos, sensores e tecnologias para obtenção de dados e informações.',
+    details: 'Seu diferencial está na coleta técnica e objetiva de informações. Principais áreas: SIGINT (sinais e comunicações), IMINT (imagens e fotografias), GEOINT (inteligência geoespacial), MASINT (assinaturas físicas), ACINT (assinaturas acústicas)',
+    characteristics: [
+      'Uso de tecnologia avançada',
+      'Grande capacidade de monitoramento',
+      'Coleta objetiva de dados',
+      'Necessidade de especialização técnica',
+    ],
+    examples: [
+      'SIGINT — Sinais e comunicações',
+      'IMINT — Imagens e fotografias',
+      'GEOINT — Inteligência geoespacial',
+      'MASINT — Assinaturas físicas',
+    ],
+  },
+  {
+    title: 'OSINT — Inteligência de Fontes Abertas',
+    icon: Globe,
+    objective: 'A OSINT utiliza informações disponíveis publicamente, principalmente por meio da internet, bancos de dados, meios de comunicação e redes sociais.',
+    details: 'Com o avanço tecnológico, tornou-se uma das áreas mais importantes da inteligência moderna.',
+    characteristics: [
+      'Uso de fontes públicas',
+      'Coleta de grande volume de dados',
+      'Necessidade de filtragem e análise',
+      'Baixo custo operacional',
+    ],
+    examples: [
+      'Notícias',
+      'Redes sociais',
+      'Sites governamentais',
+      'Bancos de dados públicos',
+    ],
+  },
+  {
+    title: 'SOCMINT — Inteligência de Mídias Sociais',
+    icon: Share2,
+    objective: 'A SOCMINT é uma subcategoria da OSINT voltada especificamente à análise de mídias sociais.',
+    details: 'Ela permite monitorar comportamentos coletivos, tendências digitais e percepções sociais em ambiente virtual.',
+    characteristics: [
+      'Análise de sentimentos',
+      'Identificação de tendências',
+      'Monitoramento coletivo',
+      'Avaliação de influência digital',
+    ],
+    examples: [
+      'Análise de tweets e posts',
+      'Monitoramento de hashtags',
+      'Tendências digitais',
+      'Percepção social em rede',
+    ],
   },
 ];
 
@@ -60,19 +262,20 @@ export default function IntelligencePage() {
       {/* Page header */}
       <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-6 py-14 md:py-20">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-blue-600/20 border border-blue-500/30 rounded-full px-4 py-2 mb-6">
-              <Brain size={14} className="text-blue-400" />
-              <span className="text-blue-300 text-xs font-bold uppercase tracking-widest">
-                Fundamentos
-              </span>
+          <div className="flex flex-col-reverse md:flex-row md:items-start gap-6">
+            <div className="max-w-3xl">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
+                Inteligência
+              </h1>
+              <p className="text-slate-300 leading-relaxed text-lg font-light max-w-2xl">
+                Conceitos, fundamentos e aplicação prática da inteligência no contexto da segurança pública.
+              </p>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-              Inteligência
-            </h1>
-            <p className="text-slate-300 leading-relaxed text-lg font-light max-w-2xl">
-              Conceitos, fundamentos e aplicação prática da inteligência no contexto da segurança pública.
-            </p>
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/gcm-caxias-17535.firebasestorage.app/o/logo%20inteligencia-Photoroom.png?alt=media&token=003d29c7-b5f3-4387-8b0e-03fe10d800f5"
+              alt="Logo Inteligência"
+              className="w-24 h-24 md:w-20 md:h-20 flex-shrink-0 mx-auto md:mx-0"
+            />
           </div>
         </div>
       </div>
@@ -334,7 +537,7 @@ export default function IntelligencePage() {
             </div>
 
             {/* Image */}
-            <div className="mb-8 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
+            <div className="mb-12 rounded-2xl overflow-hidden border border-slate-200 shadow-sm">
               <picture>
                 <source
                   media="(max-width: 768px)"
@@ -348,17 +551,217 @@ export default function IntelligencePage() {
               </picture>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              {intelligenceClassifications.map(({ title, desc, icon: Icon }, idx) => (
-                <div key={idx} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden hover:shadow-lg transition-all duration-200">
+            {/* Detailed Classification Cards */}
+            <div className="space-y-8">
+              {intelligenceClassifications.map(({ title, objective, details, characteristics, examples, icon: Icon }, idx) => (
+                <div key={idx} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                  {/* Header */}
                   <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 flex items-center gap-4">
-                    <div className="w-12 h-12 bg-white/20 border border-white/30 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-white/20 border border-white/30 rounded-lg flex items-center justify-center flex-shrink-0">
                       <Icon size={24} className="text-white" />
                     </div>
-                    <h3 className="font-bold text-white text-base">{title}</h3>
+                    <h3 className="font-bold text-white text-lg">{title}</h3>
                   </div>
-                  <div className="p-6">
-                    <p className="text-sm text-slate-700 leading-relaxed">{desc}</p>
+
+                  {/* Content */}
+                  <div className="p-8 space-y-6">
+                    {/* Objective */}
+                    <div>
+                      <p className="text-slate-700 leading-relaxed">
+                        {objective}
+                      </p>
+                    </div>
+
+                    {/* Details */}
+                    <div>
+                      <p className="text-slate-600 leading-relaxed">
+                        {details}
+                      </p>
+                    </div>
+
+                    {/* Characteristics */}
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-3 text-sm">Características:</h4>
+                      <ul className="space-y-2">
+                        {characteristics.map((char, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="text-blue-600 font-bold mt-0.5">•</span>
+                            <span className="text-slate-700 text-sm">{char}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Examples */}
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-3 text-sm">Exemplos:</h4>
+                      <ul className="space-y-2">
+                        {examples.map((example, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="text-blue-600 font-bold mt-0.5">•</span>
+                            <span className="text-slate-700 text-sm">{example}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t border-slate-100" />
+
+        {/* SEÇÃO 5 — Classificação por Recorte Temporal */}
+        <section className="py-16 md:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-12">
+              <span className="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">
+                Seção 05
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                Classificação por Recorte Temporal
+              </h2>
+              <div className="w-14 h-1 bg-blue-600 rounded mb-6" />
+              <p className="text-slate-600 leading-relaxed max-w-2xl">
+                Essa classificação organiza os conhecimentos de inteligência conforme o horizonte temporal analisado, permitindo diferenciar análises voltadas ao presente, ao acompanhamento contínuo ou à projeção futura.
+              </p>
+            </div>
+
+            {/* Temporal Classification Cards */}
+            <div className="space-y-8">
+              {intelligenceTemporalClassifications.map(({ title, objective, details, characteristics, examples, icon: Icon }, idx) => (
+                <div key={idx} className="bg-slate-50 rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                  {/* Header */}
+                  <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 p-6 flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/20 border border-white/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon size={24} className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-white text-lg">{title}</h3>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-8 space-y-6">
+                    {/* Objective */}
+                    <div>
+                      <p className="text-slate-700 leading-relaxed">
+                        {objective}
+                      </p>
+                    </div>
+
+                    {/* Details */}
+                    <div>
+                      <p className="text-slate-600 leading-relaxed">
+                        {details}
+                      </p>
+                    </div>
+
+                    {/* Characteristics */}
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-3 text-sm">Características:</h4>
+                      <ul className="space-y-2">
+                        {characteristics.map((char, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="text-emerald-600 font-bold mt-0.5">•</span>
+                            <span className="text-slate-700 text-sm">{char}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Examples */}
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-3 text-sm">Exemplos:</h4>
+                      <ul className="space-y-2">
+                        {examples.map((example, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="text-emerald-600 font-bold mt-0.5">•</span>
+                            <span className="text-slate-700 text-sm">{example}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Divider */}
+        <div className="border-t border-slate-100" />
+
+        {/* SEÇÃO 6 — Classificação pela Origem dos Dados */}
+        <section className="py-16 md:py-24 bg-slate-50">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="mb-12">
+              <span className="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 mb-3">
+                Seção 06
+              </span>
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
+                Classificação pela Origem dos Dados
+              </h2>
+              <div className="w-14 h-1 bg-blue-600 rounded mb-6" />
+              <p className="text-slate-600 leading-relaxed max-w-2xl">
+                Essa classificação diferencia os conhecimentos conforme a origem das informações utilizadas na produção da inteligência.
+              </p>
+            </div>
+
+            {/* Data Origin Classification Cards */}
+            <div className="space-y-8">
+              {intelligenceDataOriginClassifications.map(({ title, objective, details, characteristics, examples, icon: Icon }, idx) => (
+                <div key={idx} className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
+                  {/* Header */}
+                  <div className="bg-gradient-to-r from-purple-600 to-purple-700 p-6 flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/20 border border-white/30 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon size={24} className="text-white" />
+                    </div>
+                    <h3 className="font-bold text-white text-lg">{title}</h3>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-8 space-y-6">
+                    {/* Objective */}
+                    <div>
+                      <p className="text-slate-700 leading-relaxed">
+                        {objective}
+                      </p>
+                    </div>
+
+                    {/* Details */}
+                    <div>
+                      <p className="text-slate-600 leading-relaxed">
+                        {details}
+                      </p>
+                    </div>
+
+                    {/* Characteristics */}
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-3 text-sm">Características:</h4>
+                      <ul className="space-y-2">
+                        {characteristics.map((char, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="text-purple-600 font-bold mt-0.5">•</span>
+                            <span className="text-slate-700 text-sm">{char}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    {/* Examples */}
+                    <div>
+                      <h4 className="font-bold text-slate-900 mb-3 text-sm">Exemplos:</h4>
+                      <ul className="space-y-2">
+                        {examples.map((example, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="text-purple-600 font-bold mt-0.5">•</span>
+                            <span className="text-slate-700 text-sm">{example}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               ))}
